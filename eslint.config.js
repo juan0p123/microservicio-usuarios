@@ -6,7 +6,7 @@ module.exports = [
 
   // Frontend (browser)
     {
-    files: ['calculadora.js', 'app.js'],
+    files: ['calculadora.js', 'app.js', 'dom.js'],
     languageOptions: {
         ecmaVersion: 2021,
         globals: {
