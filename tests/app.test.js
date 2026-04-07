@@ -1,10 +1,9 @@
-const validarUsuario = require('../app');
+﻿const validarUsuario = require('../app');
 
-test('usuario válido', () => {
-  expect(validarUsuario("Pablo")).toBe(true);
+test('usuario valido', () => {
+  expect(validarUsuario('Pablo')).toBe(true);
 });
 
-test('usuario inválido', () => {
+test('usuario invalido', () => {
   expect(() => validarUsuario()).toThrow();
 });
-"@ | Set-Content tests\app.test.js -Encoding UTF"
