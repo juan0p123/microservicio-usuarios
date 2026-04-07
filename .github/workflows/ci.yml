@@ -1,4 +1,4 @@
-name: CI Microservicio Usuarios
+﻿name: CI Calculadora Promedio Ponderado
 
 on:
   push:
@@ -23,15 +23,15 @@ jobs:
 
       - name: Dar permisos a Jest
         run: chmod +x node_modules/.bin/jest
-        
+
       - name: Dar permisos a ESLint
         run: chmod +x node_modules/.bin/eslint
 
-      - name: Validar código (ESLint)
+      - name: Validar codigo con ESLint
         run: npx eslint .
 
       - name: Ejecutar pruebas
         run: npm test
 
-      - name: Simulación de despliegue
-        run: echo "Deploy exitoso"
+      - name: Simulacion de despliegue
+        run: echo 'Deploy calculadora promedio ponderado exitoso'
