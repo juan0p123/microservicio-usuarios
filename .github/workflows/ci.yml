@@ -3,7 +3,7 @@ name: CI Microservicio Usuarios
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   pipeline:
