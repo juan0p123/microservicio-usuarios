@@ -1,35 +1,38 @@
 ﻿const js = require('@eslint/js');
+const globals = require('globals');
 
 module.exports = [
   js.configs.recommended,
-  {
-    files: ['calculadora.js', 'index.html'],
+
+  // Frontend (browser)
+    {
+    files: ['calculadora.js', 'app.js'],
     languageOptions: {
-      ecmaVersion: 2021,
-      globals: {
-        window: 'readonly',
-        document: 'readonly',
-        alert: 'readonly',
-        module: 'readonly',
-        exports: 'readonly',
-      }
-    },
-    rules: {}
+        ecmaVersion: 2021,
+        globals: {
+            ...globals.browser,
+            ...globals.node
+    }
   },
+  rules: {
+    "no-unused-vars": "warn"
+}
+    },
+
+
   {
-    files: ['app.js', 'tests/**/*.js', 'eslint.config.js'],
+    files: ['tests/**/*.js', 'eslint.config.js'],
     languageOptions: {
       ecmaVersion: 2021,
       globals: {
-        require: 'readonly',
-        module: 'readonly',
-        exports: 'readonly',
-        __dirname: 'readonly',
-        process: 'readonly',
-        test: 'readonly',
-        expect: 'readonly',
+        ...globals.node,
+        ...globals.jest
       }
-    },
-    rules: {}
+    }
+  },
+
+
+  {
+    ignores: ['**/*.html']
   }
 ];
