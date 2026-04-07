@@ -1,0 +1,1 @@
+"node_modules/" | Set-Content .gitignore -Encoding UTF8
