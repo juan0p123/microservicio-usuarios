@@ -2,7 +2,8 @@ name: CI Microservicio Usuarios
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   pipeline:
@@ -27,5 +28,4 @@ jobs:
         run: npm test
 
       - name: Simulación de despliegue
-        run: echo 'Deploy exitoso'
-"
+        run: echo "Deploy exitoso"
